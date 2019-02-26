@@ -1,0 +1,6 @@
+framework module Pods_OmiChatTests {
+  umbrella header "Pods-OmiChatTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
