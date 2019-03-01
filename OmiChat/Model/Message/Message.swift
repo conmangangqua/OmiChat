@@ -42,6 +42,8 @@ class Message {
                                 type = .photo
                             case "sticker":
                                 type = .sticker
+                            case "location":
+                                type = .location
                             default: break
                             }
                             let content = receivedMessage["content"] as! String
@@ -99,7 +101,7 @@ class Message {
     
     func downloadLastMessage(forID: String, completion: @escaping () -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
-            Database.database().reference().child("conversations").child(forID).child("messages").observe(.value, with: { (snapshot) in
+            Database.database().reference().child("conversations").child(forID).child("messages").queryLimited(toLast: 1).observe(.value, with: { (snapshot) in
                 if snapshot.exists() {
                     for snap in snapshot.children {
                         let receivedMessage = (snap as! DataSnapshot).value as! [String: Any]
@@ -118,6 +120,8 @@ class Message {
                             type = .photo
                         case "sticker":
                             type = .sticker
+                        case "location":
+                            type = .location
                         default: break
                         }
                         self.type = type
@@ -160,6 +164,11 @@ class Message {
                 })
             case .sticker:
                 let values = ["type": "sticker", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "width": 80, "height": 80, "isRead": false]
+                Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
+                    completion(status)
+                })
+            case .location:
+                let values = ["type": "location", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "width": 0, "height": 0, "isRead": false]
                 Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
                     completion(status)
                 })

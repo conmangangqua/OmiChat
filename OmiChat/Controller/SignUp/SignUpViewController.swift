@@ -39,10 +39,10 @@ class SignUpViewController: BaseLoginViewController, NVActivityIndicatorViewable
     //MARK: Actions
     @IBAction func signUpButtonTapped(_ sender: Any) {
         if emailTxt.text == "" || usernameTxt.text == ""{
-            self.showAlertWith(title: "Error", message: "Please enter your email and username")
+            self.showAlertWith(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("DontTypeEmaiName", comment: ""))
         } else {
             let size = CGSize(width: 30, height: 30)
-            self.startAnimating(size, message: "Wating...", type: NVActivityIndicatorType.ballRotateChase, fadeInAnimation: nil)
+            self.startAnimating(size, message: NSLocalizedString("NVActivityIndicatorViewTitle", comment: ""), type: NVActivityIndicatorType.ballRotateChase, fadeInAnimation: nil)
             let email = emailTxt.text
             let username = usernameTxt.text
             let passWord = passwordTxt.text
@@ -51,7 +51,7 @@ class SignUpViewController: BaseLoginViewController, NVActivityIndicatorViewable
                 DispatchQueue.main.async {
                     self.stopAnimating(nil)
                     if success == true {
-                        let alertController = UIAlertController(title: "Congrats!", message: "Your account is created", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: NSLocalizedString("CongratsContent", comment: ""), message: NSLocalizedString("Congrats", comment: ""), preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "OK", style: .default) {
                             UIAlertAction in
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
@@ -60,7 +60,7 @@ class SignUpViewController: BaseLoginViewController, NVActivityIndicatorViewable
                         alertController.addAction(defaultAction)
                         self.present(alertController, animated: true, completion: nil)
                     } else {
-                        self.showAlertWith(title: "Error", message: "Can not register. Try again.")
+                        self.showAlertWith(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("CantRegister", comment: ""))
                     }
                 }
             }
@@ -75,10 +75,7 @@ class SignUpViewController: BaseLoginViewController, NVActivityIndicatorViewable
     }
     
     @IBAction func googleButtonTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.delegate = self
-        GIDSignIn.sharedInstance().signIn()
+      self.loginWithGoogle()
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -99,7 +96,7 @@ extension SignUpViewController : UIImagePickerControllerDelegate, UINavigationCo
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            fatalError("\(info)")
         }
         
         DispatchQueue.main.async {

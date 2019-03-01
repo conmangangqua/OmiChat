@@ -12,6 +12,8 @@ target 'OmiChat' do
   pod "Firebase/Storage"
   pod "IQKeyboardManager"
   pod "NVActivityIndicatorView"
+  pod "GoogleMaps"
+  pod "GooglePlaces"
 
   # Pods for OmiChat
 

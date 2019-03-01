@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  OmiChat
+
+  Created by MAC OSX on 2/26/19.
+  Copyright © 2019 Ominext. All rights reserved.
+*/
+//SignUpViewController
+"ErrorTitle" = "Error";
+"DontTypeEmaiName" = "Please enter your email and username.";
+"Congrats" = "Congrats";
+"CongratsContent" = "Your account is created.";
+"CantRegister" = "Can not register. Try again.";
+
+//BaseLoginViewController
+"SignInError" = "Cant login now.";
+
+//ConversationViewController
+"VerifiedEmailTitle" = "Warning";
+"VerifiedEmailContent" = "Please check mail and verification your account.";
+"You : " = "You : ";
+" send a photo." = " send a photo.";
+"You send a photo." = "You send a photo.";
+" send a sticker." = " send a sticker.";
+"You send a sticker." = "You send a sticker.";
+" send a location." = " send a location.";
+"You send a location." = "You send a location.";
+
+//SettingViewController
+"ChangeLanguageTitle" = "Notice";
+"ChangeLanguageContent" = "You must restart your app to apply this change.";
+"SaveInfoTitle" = "Notice";
+"SaveInfoContent" = "Your information changed.";
+
+//ChatViewController
+"Online" = "Online";
+"Offline" = "Offline";
+"Warning" = "Warning";
+"You don't have camera" = "You don't have camera";
+"Location" = "Location";
+"Latitude" = "Latitude";
+"Longitude" = "Longitude";
+
+//NVActivityIndicatorView
+"NVActivityIndicatorViewTitle" = "Wating";

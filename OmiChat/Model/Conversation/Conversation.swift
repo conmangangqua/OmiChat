@@ -46,8 +46,8 @@ class Conversation {
                     User.info(forUserID: fromID, completion: { (user) in
                         let emptyMessage = Message.init(type: .text, content: "", owner: .sender, timestamp: 0, width: 0, height: 0, isRead: true)
                         let conversation = Conversation.init(user: user, lastMessage: emptyMessage)
-                        conversations.append(conversation)
                         conversation.lastMessage.downloadLastMessage(forID: id, completion: {
+                            conversations.append(conversation)
                             completion(conversations)
                         })
                     })

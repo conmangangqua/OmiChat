@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67A8FF7ADE2F1146F2D6A21AD71E07C5"
+               BlueprintIdentifier = "A05BB9A7C5DAA85268EAEB82B900BD24"
                BuildableName = "Pods_OmiChat.framework"
                BlueprintName = "Pods-OmiChat"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "67A8FF7ADE2F1146F2D6A21AD71E07C5"
+            BlueprintIdentifier = "A05BB9A7C5DAA85268EAEB82B900BD24"
             BuildableName = "Pods_OmiChat.framework"
             BlueprintName = "Pods-OmiChat"
             ReferencedContainer = "container:Pods.xcodeproj">

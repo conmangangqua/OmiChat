@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseLoginViewController {
     
     //MARK: Methods
     func checkLogin(){
@@ -20,16 +21,15 @@ class SplashViewController: UIViewController {
                 DispatchQueue.main.async {
                     if success == true {
                         User.online(for: (Auth.auth().currentUser?.uid)!, status: true){ (success) in
-                            print("Online")
                         }
                         self.pushTo(viewController: .home)
-                    } else {
-                        self.pushTo(viewController: .onboarding)
                     }
                 }
             })
-        }
-        else {
+        } else if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            self.loginWithGoogle()
+            self.pushTo(viewController: .home)
+        } else {
             self.pushTo(viewController: .onboarding)
         }
     }
@@ -64,7 +64,8 @@ class SplashViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.checkLogin()
+        super.viewDidAppear(animated)
+        
     }
 }

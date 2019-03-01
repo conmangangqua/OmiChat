@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0n8-gX-ZkF"; */
+"0n8-gX-ZkF.text" = "Nhãn";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "6pT-15-Va6"; */
+"6pT-15-Va6.text" = "Mật khẩu";
+
+/* Class = "UILabel"; text = "You can also login with ..."; ObjectID = "AFg-Ox-sZo"; */
+"AFg-Ox-sZo.text" = "Bạn có thể đăng nhập bằng ...";
+
+/* Class = "UILabel"; text = "Link your social media profiles"; ObjectID = "AcL-9r-FcK"; */
+"AcL-9r-FcK.text" = "Liên kết với các tài khoản";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E2R-vF-Spm"; */
+"E2R-vF-Spm.text" = "Nhãn";
+
+/* Class = "UITabBarItem"; title = "Contact"; ObjectID = "EfU-Bs-dHj"; */
+"EfU-Bs-dHj.title" = "Liên hệ";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "ExP-pa-e3o"; */
+"ExP-pa-e3o.normalTitle" = "ĐĂNG NHẬP";
+
+/* Class = "UILabel"; text = "Setting"; ObjectID = "FMF-Qd-njg"; */
+"FMF-Qd-njg.text" = "Cài đặt";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "FNX-hL-GmU"; */
+"FNX-hL-GmU.title" = "Cài đặt";
+
+/* Class = "UILabel"; text = "Enter your email ID"; ObjectID = "FQf-UB-zdC"; */
+"FQf-UB-zdC.text" = "Nhập email của bạn";
+
+/* Class = "UILabel"; text = "Not registered yes?"; ObjectID = "Fos-ny-WCm"; */
+"Fos-ny-WCm.text" = "Bạn chưa đăng ký?";
+
+/* Class = "UILabel"; text = "Type your password"; ObjectID = "HWI-Fc-5G2"; */
+"HWI-Fc-5G2.text" = "Nhập mật khẩu";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "KgZ-5v-3Uq"; */
+"KgZ-5v-3Uq.normalTitle" = "ĐĂNG KÝ";
+
+/* Class = "UIButton"; normalTitle = "Login!"; ObjectID = "POG-Ck-2BA"; */
+"POG-Ck-2BA.normalTitle" = "Đăng nhập!";
+
+/* Class = "UILabel"; text = "Remember me"; ObjectID = "RRL-Ew-AhK"; */
+"RRL-Ew-AhK.text" = "Ghi nhớ";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "TMh-2T-q5v"; */
+"TMh-2T-q5v.normalTitle" = "ĐĂNG KÝ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V2F-Pa-W5u"; */
+"V2F-Pa-W5u.text" = "Nhãn";
+
+/* Class = "UILabel"; text = "Have an account?"; ObjectID = "Vcl-eS-Aym"; */
+"Vcl-eS-Aym.text" = "Đã có tài khoản?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xdw-HN-Ob6"; */
+"Xdw-HN-Ob6.normalTitle" = "Nút";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "XrJ-Nu-OFp"; */
+"XrJ-Nu-OFp.normalTitle" = "LƯU";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "csu-dD-66G"; */
+"csu-dD-66G.text" = "Tên";
+
+/* Class = "UILabel"; text = "Enter your username"; ObjectID = "dJU-Gh-Vbc"; */
+"dJU-Gh-Vbc.text" = "Nhập tên của bạn";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "eIQ-fY-7IK"; */
+"eIQ-fY-7IK.text" = "Liên hệ";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "ePJ-s0-O5f"; */
+"ePJ-s0-O5f.normalTitle" = "Gửi";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "fZI-ND-P4x"; */
+"fZI-ND-P4x.text" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ffK-Vn-w7p"; */
+"ffK-Vn-w7p.text" = "Nhãn";
+
+/* Class = "UITextField"; placeholder = "Type message ..."; ObjectID = "h2Y-Wt-Dx9"; */
+"h2Y-Wt-Dx9.placeholder" = "Nhập tin nhắn ...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "km2-c5-s4l"; */
+"km2-c5-s4l.text" = "Nhãn";
+
+/* Class = "UILabel"; text = "UserName"; ObjectID = "oif-bl-XlP"; */
+"oif-bl-XlP.text" = "Tên";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qxY-FN-tjQ"; */
+"qxY-FN-tjQ.normalTitle" = "Nút";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rX6-nA-zIp"; */
+"rX6-nA-zIp.text" = "Nhãn";
+
+/* Class = "UILabel"; text = "Conversation"; ObjectID = "thh-T4-O6l"; */
+"thh-T4-O6l.text" = "Trò chuyện";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vAh-f9-wdw"; */
+"vAh-f9-wdw.normalTitle" = "Nút";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "vxM-PR-gUh"; */
+"vxM-PR-gUh.normalTitle" = "ĐĂNG NHẬP";
+
+/* Class = "UISearchBar"; placeholder = "Search Name "; ObjectID = "yPz-cg-zvH"; */
+"yPz-cg-zvH.placeholder" = "Tìm theo tên";
+
+/* Class = "UIButton"; normalTitle = "Sign up!"; ObjectID = "ysO-ty-aBg"; */
+"ysO-ty-aBg.normalTitle" = "Đăng ký!";
+
+/* Class = "UITabBarItem"; title = "Conversation"; ObjectID = "zde-kW-JQQ"; */
+"zde-kW-JQQ.title" = "Trò chuyện";

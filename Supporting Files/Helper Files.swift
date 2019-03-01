@@ -31,10 +31,10 @@ enum MessageType {
     case photo
     case text
     case sticker
+    case location
 }
 
 enum MessageOwner {
     case sender
     case receiver
 }
-

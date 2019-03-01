@@ -16,7 +16,6 @@
 		0C0290E32220017200CF8522 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0290E22220017200CF8522 /* PhotoViewController.swift */; };
 		0C037F7D221CE22F003AD164 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C037F7C221CE22F003AD164 /* UIColor.swift */; };
 		0C037F80221CEACA003AD164 /* profilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C037F7F221CEACA003AD164 /* profilePic.png */; };
-		0C037F82221CFD5B003AD164 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C037F81221CFD5B003AD164 /* loading.png */; };
 		0C037F84221D189A003AD164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C037F83221D1899003AD164 /* GoogleService-Info.plist */; };
 		0C0433BA22169D7800719D56 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0433B922169D7800719D56 /* String.swift */; };
 		0C0433BF2216C36300719D56 /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0433BE2216C36300719D56 /* Helper Files.swift */; };
@@ -61,6 +60,8 @@
 		0C10EC5A22239B3200D9138C /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C10EC5922239B3200D9138C /* white.png */; };
 		0C10EC5C2223DDD500D9138C /* green-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C10EC5B2223DDD500D9138C /* green-bubble.png */; };
 		0C10EC5E2223DDE700D9138C /* gray-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C10EC5D2223DDE600D9138C /* gray-bubble.png */; };
+		0C67807F22253C0B001F6782 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C67808122253C0B001F6782 /* Localizable.strings */; };
+		0C6780842225451D001F6782 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6780832225451D001F6782 /* LocalizationSystem.swift */; };
 		0C67EB7B2212ADD200C3F289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67EB7A2212ADD200C3F289 /* AppDelegate.swift */; };
 		0C67EB802212ADD200C3F289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C67EB7E2212ADD200C3F289 /* Main.storyboard */; };
 		0C67EB832212ADD200C3F289 /* OmiChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C67EB812212ADD200C3F289 /* OmiChat.xcdatamodeld */; };
@@ -81,6 +82,8 @@
 		0C67EBCA2213C4B500C3F289 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67EBC92213C4B500C3F289 /* ConversationViewController.swift */; };
 		0C67EBCE2213C4D600C3F289 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67EBCD2213C4D600C3F289 /* SettingViewController.swift */; };
 		0C67EBD02213C4E200C3F289 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67EBCF2213C4E200C3F289 /* ChatViewController.swift */; };
+		0CB5C28122269FED00DD6CA3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C28022269FED00DD6CA3 /* MapViewController.swift */; };
+		0CB5C2852228D5E400DD6CA3 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5C2842228D5E400DD6CA3 /* loading.png */; };
 		189749B224E442AAF417BAD0 /* Pods_OmiChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9CCCF185BA0656C2774722 /* Pods_OmiChatTests.framework */; };
 		44C676BE14613B3D4896B40A /* Pods_OmiChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11923FA5A9873E06B1C4AA6 /* Pods_OmiChatUITests.framework */; };
 		CAE02416C1C7E032C91984F1 /* Pods_OmiChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0144108E332C3FDC29B13B1E /* Pods_OmiChat.framework */; };
@@ -114,7 +117,6 @@
 		0C0290E22220017200CF8522 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		0C037F7C221CE22F003AD164 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0C037F7F221CEACA003AD164 /* profilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePic.png; sourceTree = "<group>"; };
-		0C037F81221CFD5B003AD164 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		0C037F83221D1899003AD164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C0433B922169D7800719D56 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0C0433BE2216C36300719D56 /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,11 @@
 		0C10EC5922239B3200D9138C /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		0C10EC5B2223DDD500D9138C /* green-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-bubble.png"; sourceTree = "<group>"; };
 		0C10EC5D2223DDE600D9138C /* gray-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray-bubble.png"; sourceTree = "<group>"; };
+		0C67807B22253BA0001F6782 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0C67807C22253BA0001F6782 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		0C67808022253C0B001F6782 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C6780832225451D001F6782 /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
+		0C6780862225559C001F6782 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0C67EB772212ADD200C3F289 /* OmiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C67EB7A2212ADD200C3F289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C67EB7F2212ADD200C3F289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +192,8 @@
 		0C67EBC92213C4B500C3F289 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0C67EBCD2213C4D600C3F289 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0C67EBCF2213C4E200C3F289 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0CB5C28022269FED00DD6CA3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0CB5C2842228D5E400DD6CA3 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		11D8ECDABF6D27D4D45B728F /* Pods-OmiChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiChatTests.debug.xcconfig"; path = "Target Support Files/Pods-OmiChatTests/Pods-OmiChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		169406F04E96E7B33B461F77 /* Pods-OmiChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiChat.debug.xcconfig"; path = "Target Support Files/Pods-OmiChat/Pods-OmiChat.debug.xcconfig"; sourceTree = "<group>"; };
 		3C2E9ACF8C4215EF4DBD2499 /* Pods-OmiChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiChatUITests.release.xcconfig"; path = "Target Support Files/Pods-OmiChatUITests/Pods-OmiChatUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -429,6 +438,15 @@
 			path = Meep;
 			sourceTree = "<group>";
 		};
+		0C6780822225450E001F6782 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0C67808122253C0B001F6782 /* Localizable.strings */,
+				0C6780832225451D001F6782 /* LocalizationSystem.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		0C67EB6E2212ADD200C3F289 = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +534,7 @@
 		0C67EBAF2212B71B00C3F289 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0CB5C27F22269FD400DD6CA3 /* Map */,
 				0C0290CD221FF67800CF8522 /* Contact */,
 				0C0290CC221FF66300CF8522 /* Chat */,
 				0C0290CB221FF65B00CF8522 /* Conversation */,
@@ -531,6 +550,7 @@
 		0C67EBB02212B7E300C3F289 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C6780822225450E001F6782 /* Localization */,
 				0C67EB7A2212ADD200C3F289 /* AppDelegate.swift */,
 				0C67EB812212ADD200C3F289 /* OmiChat.xcdatamodeld */,
 				0C0433BE2216C36300719D56 /* Helper Files.swift */,
@@ -545,11 +565,11 @@
 				0C037F7F221CEACA003AD164 /* profilePic.png */,
 				0C67EBBA2212C54800C3F289 /* topSplash.png */,
 				0C10EC5922239B3200D9138C /* white.png */,
+				0CB5C2842228D5E400DD6CA3 /* loading.png */,
 				0C67EBB42212BC6500C3F289 /* bottomSplash.png */,
 				0C67EBB62212BF8300C3F289 /* centerSplash.png */,
 				0C10EC5D2223DDE600D9138C /* gray-bubble.png */,
 				0C10EC5B2223DDD500D9138C /* green-bubble.png */,
-				0C037F81221CFD5B003AD164 /* loading.png */,
 				0C67EBBC2212C5FD00C3F289 /* middleSplash.png */,
 			);
 			path = Image;
@@ -565,6 +585,14 @@
 				0C037F7C221CE22F003AD164 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0CB5C27F22269FD400DD6CA3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				0CB5C28022269FED00DD6CA3 /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		CDBC9AE9804AB5E0FD81C34D /* Frameworks */ = {
@@ -702,16 +730,17 @@
 				0C10EC5E2223DDE700D9138C /* gray-bubble.png in Resources */,
 				0C0C6E81221D4B3200A4A2C9 /* 1943126361920881938.png in Resources */,
 				0C0C6E7A221D4B3200A4A2C9 /* 1943126362034215260.png in Resources */,
+				0CB5C2852228D5E400DD6CA3 /* loading.png in Resources */,
 				0C0C6E6A221D4B3200A4A2C9 /* 1943126362100881920.png in Resources */,
 				0C0C6E6E221D4B3200A4A2C9 /* 1943126362117548585.png in Resources */,
 				0C10EC5C2223DDD500D9138C /* green-bubble.png in Resources */,
 				0C0C6E6F221D4B3200A4A2C9 /* 1943126361884215275.png in Resources */,
 				0C0C6E7B221D4B3200A4A2C9 /* 1943126362107548586.png in Resources */,
 				0C0C6E72221D4B3200A4A2C9 /* 1943126362137548583.png in Resources */,
-				0C037F82221CFD5B003AD164 /* loading.png in Resources */,
 				0C67EBB52212BC6500C3F289 /* bottomSplash.png in Resources */,
 				0C67EBBB2212C54800C3F289 /* topSplash.png in Resources */,
 				0C10EC5A22239B3200D9138C /* white.png in Resources */,
+				0C67807F22253C0B001F6782 /* Localizable.strings in Resources */,
 				0C0C6E7F221D4B3200A4A2C9 /* 1943126362180881912.png in Resources */,
 				0C0C6E77221D4B3200A4A2C9 /* 1943126362124215251.png in Resources */,
 				0C0C6E76221D4B3200A4A2C9 /* 1943126362064215257.png in Resources */,
@@ -827,12 +856,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-OmiChat/Pods-OmiChat-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -891,6 +924,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB5C28122269FED00DD6CA3 /* MapViewController.swift in Sources */,
 				0C67EBC22212DD7C00C3F289 /* LoginViewController.swift in Sources */,
 				0C67EBCE2213C4D600C3F289 /* SettingViewController.swift in Sources */,
 				0C0433C5221A645900719D56 /* ContactViewController.swift in Sources */,
@@ -912,6 +946,7 @@
 				0C0290E12220000900CF8522 /* ZoomImageView.swift in Sources */,
 				0C0433C9221A944200719D56 /* MessageTableViewCell.swift in Sources */,
 				0C0433C3221A56FA00719D56 /* Conversation.swift in Sources */,
+				0C6780842225451D001F6782 /* LocalizationSystem.swift in Sources */,
 				0C67EB832212ADD200C3F289 /* OmiChat.xcdatamodeld in Sources */,
 				0C67EBD02213C4E200C3F289 /* ChatViewController.swift in Sources */,
 				0C0290BF221FAA1E00CF8522 /* StickerView.swift in Sources */,
@@ -955,10 +990,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0C67808122253C0B001F6782 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C67808022253C0B001F6782 /* vi */,
+				0C6780862225559C001F6782 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0C67EB7E2212ADD200C3F289 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0C67EB7F2212ADD200C3F289 /* Base */,
+				0C67807C22253BA0001F6782 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -967,6 +1012,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0C67EB872212ADD300C3F289 /* Base */,
+				0C67807B22253BA0001F6782 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -978,6 +1024,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1039,6 +1086,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

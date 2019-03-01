@@ -11,6 +11,8 @@ import CoreData
 import Firebase
 import IQKeyboardManager
 import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().toolbarDoneBarButtonItemText = "OK"
         IQKeyboardManager.shared().enableDebugging = true
+        
+        //GoogleMaps
+        GMSServices.provideAPIKey("IzaSyA8u9pwMIOMV7-vYf84Dm6DKgvCfOy0sSA")
+        GMSPlacesClient.provideAPIKey("IzaSyA8u9pwMIOMV7-vYf84Dm6DKgvCfOy0sSA")
+        
         return true
     }
     
@@ -50,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         if Auth.auth().currentUser != nil {
             User.online(for: (Auth.auth().currentUser?.uid)!, status: false){ (success) in
-                print("Offline")
             }
         }
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -60,7 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         if Auth.auth().currentUser != nil {
             User.online(for: (Auth.auth().currentUser?.uid)!, status: true){ (success) in
-                print("Online")
             }
         }
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

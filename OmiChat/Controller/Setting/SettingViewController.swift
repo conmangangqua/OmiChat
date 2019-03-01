@@ -8,14 +8,17 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, NVActivityIndicatorViewable {
 
     //MARK: Properties
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var languageBtn: RoundedButton!
+    @IBOutlet weak var titleLbl: UILabel!
     
     //MARK: Methods
     func initView(){
@@ -45,6 +48,15 @@ class SettingViewController: UIViewController {
         }
     }
     
+    func getLanguage(){
+        let language = LocalizationSystem.sharedInstance.getLanguage()
+        if language == "vi" {
+            languageBtn.setImage(UIImage(named: "vietnam"), for: .normal)
+        } else {
+            languageBtn.setImage(UIImage(named: "united-states"), for: .normal)
+        }
+    }
+    
     //MARK: Actions
     @IBAction func profileImageTapped(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
@@ -53,19 +65,31 @@ class SettingViewController: UIViewController {
         present(imagePickerController, animated: true, completion: nil)
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
+        let size = CGSize(width: 30, height: 30)
+        self.startAnimating(size, message: NSLocalizedString("NVActivityIndicatorViewTitle", comment: ""), type: NVActivityIndicatorType.ballRotateChase, fadeInAnimation: nil)
         User.updateProfileInfo(image: profileImageView.image!, name: usernameTxt.text!) {(success) in
+            self.stopAnimating(nil)
             if success == true {
-                self.showAlertWith(title: "Success", message: "Your information changed.")
+                self.showAlertWith(title: NSLocalizedString("SaveInfoTitle", comment: ""), message: NSLocalizedString("SaveInfoContent", comment: ""))
             }
         }
         usernameTxt.endEditing(false)
+    }
+    @IBAction func languageButtonTapped(_ sender: UIButton) {
+        if LocalizationSystem.sharedInstance.getLanguage() == "vi" {
+            LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+            languageBtn.setImage(UIImage(named: "united-states"), for: .normal)
+        } else {
+            LocalizationSystem.sharedInstance.setLanguage(languageCode: "vi")
+            languageBtn.setImage(UIImage(named: "vietnam"), for: .normal)
+        }
+        self.showAlertWith(title: NSLocalizedString("ChangeLanguageTitle", comment: ""), message: NSLocalizedString("ChangeLanguageContent", comment: ""))
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
         User.logOutUser(forUserID: (Auth.auth().currentUser?.uid)!) { (status) in
             if status == true {
                 UserDefaults.standard.removeObject(forKey: "userInformation")
-                UserDefaults.standard.removeObject(forKey: "googleSignInInfo")
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
                 self.present(vc, animated: true, completion: nil)
             }
@@ -78,6 +102,9 @@ class SettingViewController: UIViewController {
         initView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.getLanguage()
+    }
 }
 
 extension SettingViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {

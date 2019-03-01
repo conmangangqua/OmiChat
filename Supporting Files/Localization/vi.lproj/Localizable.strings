@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  OmiChat
+
+  Created by MAC OSX on 2/26/19.
+  Copyright © 2019 Ominext. All rights reserved.
+*/
+//SignUpViewController
+"ErrorTitle" = "Lỗi";
+"DontTypeEmaiName" = "Nhập email và tên đăng nhập của bạn.";
+"Congrats" = "Chúc mừng";
+"CongratsContent" = "Tài khoản của bạn đã được tạo.";
+"CantRegister" = "Không thể đăng ký. Thử lại.";
+
+//BaseLoginViewController
+"SignInError" = "Không thể đăng nhập lúc này.";
+
+//ConversationViewController
+"VerifiedEmailTitle" = "Cảnh báo";
+"VerifiedEmailContent" = "Kiểm tra email và xác minh tài khoản của bạn.";
+"You : " = "Bạn : ";
+" send a photo." = " đã gửi một ảnh.";
+"You send a photo." = "Bạn đã gửi một ảnh.";
+" send a sticker." = " đã gửi một nhãn dán.";
+"You send a sticker." = "Bạn đã gửi một nhãn dán.";
+" send a location." = " đã gửi một vị trí.";
+"You send a location." = "Bạn đã gửi một vị trí.";
+
+//SettingViewController
+"ChangeLanguageTitle" = "Thông báo";
+"ChangeLanguageContent" = "Bạn phải khởi động lại ứng dụng để áp dụng thay đổi này.";
+"SaveInfoTitle" = "Thông báo";
+"SaveInfoContent" = "Thông tin của bạn đã được thay đổi.";
+
+//ChatViewController
+"Online" = "Đang hoạt động";
+"Offline" = "Không hoạt động";
+"Warning" = "Cảnh báo";
+"You don't have camera" = "Bạn ko có camera";
+"Location" = "Vị trí";
+"Latitude" = "Vĩ độ";
+"Longitude" = "Kinh độ";
+
+//NVActivityIndicatorView
+"NVActivityIndicatorViewTitle" = "Xin chờ";

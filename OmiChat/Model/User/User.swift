@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class User {
 
@@ -23,6 +24,7 @@ class User {
     class func registerUser(withName: String, email: String, password: String, profilePic: UIImage, completion: @escaping (Bool) -> Swift.Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
+                user?.user.sendEmailVerification(completion: nil)
                 let storageRef = Storage.storage().reference().child("usersProfilePics").child((user?.user.uid)!)
                 let metadata = StorageMetadata()
                 metadata.contentType = "image/jpeg"
@@ -126,9 +128,9 @@ class User {
                             request.commitChanges(completion: { (error) in
                             })
                         }
-                        let userRef = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!)
-                        let value = ["email": Auth.auth().currentUser?.email, "name": name, "profilePicLink": url.absoluteString]
-                        userRef.updateChildValues(["credentials": value])
+                        let userRef = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("credentials")
+                        userRef.child("name").setValue(name)
+                        userRef.child("profilePicLink").setValue(url.absoluteString)
                         completion(true)
                     } else {
                         completion(false)
@@ -165,16 +167,28 @@ class User {
         })
     }
     
+    class func checkUserVerification(completion: @escaping (Bool) -> Swift.Void) {
+        Auth.auth().currentUser?.reload(completion: { (_) in
+            let status = (Auth.auth().currentUser?.isEmailVerified)!
+            completion(status)
+        })
+    }
+    
     class func logOutUser(forUserID: String, completion: @escaping (Bool) -> Swift.Void) {
-        do {
-            try Auth.auth().signOut()
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            GIDSignIn.sharedInstance()?.signOut()
             User.online(for: forUserID, status: false){ (success) in
-                print("Offline")
             }
-            UserDefaults.standard.removeObject(forKey: "userInformation")
             completion(true)
-        } catch _ {
-            completion(false)
+        } else {
+            do {
+                try Auth.auth().signOut()
+                User.online(for: forUserID, status: false){ (success) in
+                }
+                completion(true)
+            } catch _ {
+                completion(false)
+            }
         }
     }
     

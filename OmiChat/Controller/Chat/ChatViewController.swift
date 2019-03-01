@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import CoreLocation
 
 class ChatViewController: UIViewController, StickerViewDelegate {
    
@@ -19,8 +20,9 @@ class ChatViewController: UIViewController, StickerViewDelegate {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet var stickerView: StickerView!
-    @IBOutlet weak var keyboardBtn: UIButton!
+
     var imagePicker: UIImagePickerController!
+    let locationManager = CLLocationManager()
     var items = [Message]()
     var currentUser: User?
     
@@ -73,6 +75,18 @@ class ChatViewController: UIViewController, StickerViewDelegate {
         self.composeMessage(type: .sticker, width: 80, height: 80, content: name)
     }
     
+    func checkLocationPermission() -> Bool {
+        var state = false
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            state = true
+        case .authorizedAlways:
+            state = true
+        default: break
+        }
+        return state
+    }
+    
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         let widthRatio  = targetSize.width  / size.width
@@ -103,17 +117,23 @@ class ChatViewController: UIViewController, StickerViewDelegate {
         view.window!.layer.add(transition, forKey: kCATransition)
         self.present(resultViewController, animated: false, completion: nil)
     }
-    
-    @IBAction func keyboardButtonTapped(_ sender: UIButton) {
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
         clearBackgroundButton()
-        sender.backgroundColor = GlobalVariables.green
-        inputTextField.becomeFirstResponder()
+        if self.checkLocationPermission() {
+            self.locationManager.startUpdatingLocation()
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "mapVC") as! MapViewController
+//            resultViewController.currentUserID = self.currentUser?.id
+//            self.present(resultViewController, animated: true, completion: nil)
+        } else {
+            CLLocationManager().requestWhenInUseAuthorization()
+        }
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
         clearBackgroundButton()
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            self.showAlertWith(title: "Warning", message: "You don't have camera")
+            self.showAlertWith(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("You don't have camera", comment: ""))
             return
         }
         self.selectImageFrom(.camera)
@@ -145,6 +165,8 @@ class ChatViewController: UIViewController, StickerViewDelegate {
         super.viewDidLoad()
         configTableView()
         configStickerView()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.fetchData()
     }
     
@@ -153,9 +175,9 @@ class ChatViewController: UIViewController, StickerViewDelegate {
             DispatchQueue.main.async {
                 self.titleLabel.text = self.currentUser?.name
                 if user.isOnline == true {
-                    self.onlineLbl.text = "Online"
+                    self.onlineLbl.text = NSLocalizedString("Online", comment: "")
                 } else {
-                    self.onlineLbl.text = "Offline"
+                    self.onlineLbl.text = NSLocalizedString("Offline", comment: "")
                 }
             }
         })
@@ -218,6 +240,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     })
                 }
+            case .location:
+                let location = self.items[indexPath.row].content as! String
+                let latitude = location.substring(from: 0, to: location.lastIndex(of: ":")!)
+                let longitude = location.substring(from: location.lastIndex(of: ":")! + 1, to: location.count)
+                cell.messageView.backgroundColor = GlobalVariables.green
+                cell.messagePic.isHidden = true
+                cell.message.text = "🗺 " + NSLocalizedString("Location", comment: "") + "\n" + NSLocalizedString("Latitude", comment: "") + " : \(latitude)" + "\n" + NSLocalizedString("Longitude", comment: "") + " : \(longitude)"
             }
             return cell
         case .sender:
@@ -259,6 +288,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     })
                 }
+            case .location:
+                let location = self.items[indexPath.row].content as! String
+                let latitude = location.substring(from: 0, to: location.lastIndex(of: ":")!)
+                let longitude = location.substring(from: location.lastIndex(of: ":")! + 1, to: location.count)
+                cell.messageView.backgroundColor = GlobalVariables.green
+                cell.messagePic.isHidden = true
+                cell.message.text = "🗺 " + NSLocalizedString("Location", comment: "") + "\n" + NSLocalizedString("Latitude", comment: "") + " : \(latitude)" + "\n" + NSLocalizedString("Longitude", comment: "") + " : \(longitude)"
             }
             return cell
         }
@@ -282,7 +318,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            fatalError("\(info)")
         }
         self.composeMessage(type: .photo, width: Int(selectedImage.size.width), height: Int(selectedImage.size.height), content: selectedImage)
         
@@ -298,5 +334,18 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             imagePicker.sourceType = .photoLibrary
         }
         present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+extension ChatViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        if let lastLocation = locations.last {
+            let coordinate = String(lastLocation.coordinate.latitude) + ":" + String(lastLocation.coordinate.longitude)
+            let message = Message.init(type: .location, content: coordinate, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), width: 0, height: 0, isRead: false)
+            Message.send(message: message, toID: (currentUser?.id)!, completion: {(_) in
+                print(coordinate)
+            })
+        }
     }
 }

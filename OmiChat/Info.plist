@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>googlechromes</string>
+        <string>comgooglemaps</string>
+    </array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Allow</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

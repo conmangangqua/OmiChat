@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="OmiChat/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="vi">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.0" build-num="10A255"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OmiChat/View/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="vi">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.0" build-num="10A255"/>
+    </header>
+    <body>
+      <trans-unit id="0n8-gX-ZkF.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "0n8-gX-ZkF";</note>
+      </trans-unit>
+      <trans-unit id="6pT-15-Va6.text">
+        <source>Password</source>
+        <target>Password</target>
+        <note>Class = "UILabel"; text = "Password"; ObjectID = "6pT-15-Va6";</note>
+      </trans-unit>
+      <trans-unit id="AFg-Ox-sZo.text">
+        <source>You can also login with ...</source>
+        <target>You can also login with ...</target>
+        <note>Class = "UILabel"; text = "You can also login with ..."; ObjectID = "AFg-Ox-sZo";</note>
+      </trans-unit>
+      <trans-unit id="AcL-9r-FcK.text">
+        <source>Link your social media profiles</source>
+        <target>Link your social media profiles</target>
+        <note>Class = "UILabel"; text = "Link your social media profiles"; ObjectID = "AcL-9r-FcK";</note>
+      </trans-unit>
+      <trans-unit id="E2R-vF-Spm.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "E2R-vF-Spm";</note>
+      </trans-unit>
+      <trans-unit id="EfU-Bs-dHj.title">
+        <source>Contact</source>
+        <target>Contact</target>
+        <note>Class = "UITabBarItem"; title = "Contact"; ObjectID = "EfU-Bs-dHj";</note>
+      </trans-unit>
+      <trans-unit id="ExP-pa-e3o.normalTitle">
+        <source>LOGIN</source>
+        <target>LOGIN</target>
+        <note>Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "ExP-pa-e3o";</note>
+      </trans-unit>
+      <trans-unit id="FMF-Qd-njg.text">
+        <source>Setting</source>
+        <target>Setting</target>
+        <note>Class = "UILabel"; text = "Setting"; ObjectID = "FMF-Qd-njg";</note>
+      </trans-unit>
+      <trans-unit id="FNX-hL-GmU.title">
+        <source>Setting</source>
+        <target>Setting</target>
+        <note>Class = "UITabBarItem"; title = "Setting"; ObjectID = "FNX-hL-GmU";</note>
+      </trans-unit>
+      <trans-unit id="FQf-UB-zdC.text">
+        <source>Enter your email ID</source>
+        <target>Enter your email ID</target>
+        <note>Class = "UILabel"; text = "Enter your email ID"; ObjectID = "FQf-UB-zdC";</note>
+      </trans-unit>
+      <trans-unit id="Fos-ny-WCm.text">
+        <source>Not registered yes?</source>
+        <target>Not registered yes?</target>
+        <note>Class = "UILabel"; text = "Not registered yes?"; ObjectID = "Fos-ny-WCm";</note>
+      </trans-unit>
+      <trans-unit id="HWI-Fc-5G2.text">
+        <source>Type your password</source>
+        <target>Type your password</target>
+        <note>Class = "UILabel"; text = "Type your password"; ObjectID = "HWI-Fc-5G2";</note>
+      </trans-unit>
+      <trans-unit id="KgZ-5v-3Uq.normalTitle">
+        <source>SIGN UP</source>
+        <target>SIGN UP</target>
+        <note>Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "KgZ-5v-3Uq";</note>
+      </trans-unit>
+      <trans-unit id="POG-Ck-2BA.normalTitle">
+        <source>Login!</source>
+        <target>Login!</target>
+        <note>Class = "UIButton"; normalTitle = "Login!"; ObjectID = "POG-Ck-2BA";</note>
+      </trans-unit>
+      <trans-unit id="RRL-Ew-AhK.text">
+        <source>Remember me</source>
+        <target>Remember me</target>
+        <note>Class = "UILabel"; text = "Remember me"; ObjectID = "RRL-Ew-AhK";</note>
+      </trans-unit>
+      <trans-unit id="TMh-2T-q5v.normalTitle">
+        <source>SIGN UP</source>
+        <target>SIGN UP</target>
+        <note>Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "TMh-2T-q5v";</note>
+      </trans-unit>
+      <trans-unit id="V2F-Pa-W5u.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "V2F-Pa-W5u";</note>
+      </trans-unit>
+      <trans-unit id="Vcl-eS-Aym.text">
+        <source>Have an account?</source>
+        <target>Have an account?</target>
+        <note>Class = "UILabel"; text = "Have an account?"; ObjectID = "Vcl-eS-Aym";</note>
+      </trans-unit>
+      <trans-unit id="Xdw-HN-Ob6.normalTitle">
+        <source>Button</source>
+        <target>Button</target>
+        <note>Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xdw-HN-Ob6";</note>
+      </trans-unit>
+      <trans-unit id="XrJ-Nu-OFp.normalTitle">
+        <source>SAVE</source>
+        <target>SAVE</target>
+        <note>Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "XrJ-Nu-OFp";</note>
+      </trans-unit>
+      <trans-unit id="csu-dD-66G.text">
+        <source>Username</source>
+        <target>Username</target>
+        <note>Class = "UILabel"; text = "Username"; ObjectID = "csu-dD-66G";</note>
+      </trans-unit>
+      <trans-unit id="dJU-Gh-Vbc.text">
+        <source>Enter your username</source>
+        <target>Enter your username</target>
+        <note>Class = "UILabel"; text = "Enter your username"; ObjectID = "dJU-Gh-Vbc";</note>
+      </trans-unit>
+      <trans-unit id="eIQ-fY-7IK.text">
+        <source>Contact</source>
+        <target>Contact</target>
+        <note>Class = "UILabel"; text = "Contact"; ObjectID = "eIQ-fY-7IK";</note>
+      </trans-unit>
+      <trans-unit id="ePJ-s0-O5f.normalTitle">
+        <source>Send</source>
+        <target>Send</target>
+        <note>Class = "UIButton"; normalTitle = "Send"; ObjectID = "ePJ-s0-O5f";</note>
+      </trans-unit>
+      <trans-unit id="fZI-ND-P4x.text">
+        <source>Email</source>
+        <target>Email</target>
+        <note>Class = "UILabel"; text = "Email"; ObjectID = "fZI-ND-P4x";</note>
+      </trans-unit>
+      <trans-unit id="ffK-Vn-w7p.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "ffK-Vn-w7p";</note>
+      </trans-unit>
+      <trans-unit id="h2Y-Wt-Dx9.placeholder">
+        <source>Type message ...</source>
+        <target>Type message ...</target>
+        <note>Class = "UITextField"; placeholder = "Type message ..."; ObjectID = "h2Y-Wt-Dx9";</note>
+      </trans-unit>
+      <trans-unit id="km2-c5-s4l.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "km2-c5-s4l";</note>
+      </trans-unit>
+      <trans-unit id="oif-bl-XlP.text">
+        <source>UserName</source>
+        <target>UserName</target>
+        <note>Class = "UILabel"; text = "UserName"; ObjectID = "oif-bl-XlP";</note>
+      </trans-unit>
+      <trans-unit id="qxY-FN-tjQ.normalTitle">
+        <source>Button</source>
+        <target>Button</target>
+        <note>Class = "UIButton"; normalTitle = "Button"; ObjectID = "qxY-FN-tjQ";</note>
+      </trans-unit>
+      <trans-unit id="rX6-nA-zIp.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "rX6-nA-zIp";</note>
+      </trans-unit>
+      <trans-unit id="thh-T4-O6l.text">
+        <source>Conversation</source>
+        <target>Conversation</target>
+        <note>Class = "UILabel"; text = "Conversation"; ObjectID = "thh-T4-O6l";</note>
+      </trans-unit>
+      <trans-unit id="vAh-f9-wdw.normalTitle">
+        <source>Button</source>
+        <target>Button</target>
+        <note>Class = "UIButton"; normalTitle = "Button"; ObjectID = "vAh-f9-wdw";</note>
+      </trans-unit>
+      <trans-unit id="vxM-PR-gUh.normalTitle">
+        <source>LOGIN</source>
+        <target>LOGIN</target>
+        <note>Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "vxM-PR-gUh";</note>
+      </trans-unit>
+      <trans-unit id="yPz-cg-zvH.placeholder">
+        <source>Search Name </source>
+        <target>Search Name </target>
+        <note>Class = "UISearchBar"; placeholder = "Search Name "; ObjectID = "yPz-cg-zvH";</note>
+      </trans-unit>
+      <trans-unit id="ysO-ty-aBg.normalTitle">
+        <source>Sign up!</source>
+        <target>Sign up!</target>
+        <note>Class = "UIButton"; normalTitle = "Sign up!"; ObjectID = "ysO-ty-aBg";</note>
+      </trans-unit>
+      <trans-unit id="zde-kW-JQQ.title">
+        <source>Conversation</source>
+        <target>Conversation</target>
+        <note>Class = "UITabBarItem"; title = "Conversation"; ObjectID = "zde-kW-JQQ";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

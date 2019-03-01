@@ -44,7 +44,7 @@ class LoginViewController: BaseLoginViewController {
     //MARK: Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         if self.usernameTxt.text == "" || self.passwordTxt.text == "" {
-            self.showAlertWith(title: "Error", message: "Please enter an email and password.")
+            self.showAlertWith(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("DontTypeEmaiName", comment: ""))
         } else {
             User.loginEmail(withEmail: self.usernameTxt.text!, password: self.passwordTxt.text! ) { (status) in
                 DispatchQueue.main.async {
@@ -56,12 +56,11 @@ class LoginViewController: BaseLoginViewController {
                             UserDefaults.standard.set(userInfo, forKey: "userInformation")
                         }
                         User.online(for: (Auth.auth().currentUser?.uid)!, status: true){ (success) in
-                            print("Online")
                         }
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbarController")
                         self.present(vc!, animated: true, completion: nil)
                     } else {
-                        self.showAlertWith(title: "Error", message: "Error")
+                        self.showAlertWith(title: NSLocalizedString("ErrorTitle", comment: ""), message: NSLocalizedString("SignInError", comment: ""))
                     }
                 }
             }
@@ -69,10 +68,7 @@ class LoginViewController: BaseLoginViewController {
     }
     
     @IBAction func googleButtonTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.delegate = self
-        GIDSignIn.sharedInstance().signIn()
+        self.loginWithGoogle()
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {

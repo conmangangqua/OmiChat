@@ -13,6 +13,7 @@ class ConversationViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var warningBtn: RoundedButton!
     var items = [Conversation]()
     var selectedUser: User?
     
@@ -32,10 +33,22 @@ class ConversationViewController: UIViewController {
         }
     }
     
+    func checkUserVerification(){
+        User.checkUserVerification {(status) in
+            self.warningBtn.isHidden = status
+        }
+    }
+    
+    //MARK: Action
+    @IBAction func warningButtonTapped(_ sender: Any) {
+        self.showAlertWith(title: NSLocalizedString("VerifiedEmailTitle", comment: ""), message: NSLocalizedString("VerifiedEmailContent", comment: ""))
+    }
+    
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchData()
+        self.checkUserVerification()    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,19 +94,25 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                 if self.items[indexPath.row].lastMessage.owner == .sender {
                     cell.messageLabel.text = message
                 } else {
-                    cell.messageLabel.text = "You : " + message
+                    cell.messageLabel.text = NSLocalizedString("You : ", comment: "") + message
                 }
             case .photo:
                 if self.items[indexPath.row].lastMessage.owner == .sender {
-                    cell.messageLabel.text = username + " send a photo."
+                    cell.messageLabel.text = username + NSLocalizedString(" send a photo.", comment: "")
                 } else {
-                    cell.messageLabel.text = "You send a photo."
+                    cell.messageLabel.text = NSLocalizedString("You send a photo.", comment: "")
                 }
             case .sticker:
                 if self.items[indexPath.row].lastMessage.owner == .sender {
-                    cell.messageLabel.text = username + " send a sticker."
+                    cell.messageLabel.text = username + NSLocalizedString(" send a sticker.", comment: "")
                 } else {
-                    cell.messageLabel.text = "You send a sticker."
+                    cell.messageLabel.text = NSLocalizedString("You send a sticker.", comment: "")
+                }
+            case .location:
+                if self.items[indexPath.row].lastMessage.owner == .sender {
+                    cell.messageLabel.text = username + NSLocalizedString(" send a location.", comment: "")
+                } else {
+                    cell.messageLabel.text = NSLocalizedString("You send a location.", comment: "")
                 }
             }
             let messageDate = Date(timeIntervalSince1970: TimeInterval(self.items[indexPath.row].lastMessage.timestamp))

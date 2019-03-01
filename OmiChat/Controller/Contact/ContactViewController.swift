@@ -66,7 +66,7 @@ extension ContactViewController: UICollectionViewDelegate, UICollectionViewDataS
             if self.filteredItems[indexPath.row].isOnline == true {
                 cell.onlineImage.backgroundColor = GlobalVariables.green
             } else {
-                cell.onlineImage.backgroundColor = UIColor.red
+                cell.onlineImage.backgroundColor = UIColor.gray
             }
             return cell
         }
