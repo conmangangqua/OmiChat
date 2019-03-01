@@ -200,6 +200,26 @@ class Message {
         }
     }
     
+    class func checkTyping(forUserID: String, completion: @escaping (Bool) -> Swift.Void) {
+        if let currentUserID = Auth.auth().currentUser?.uid {
+        Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observe(.value, with: { (snapshot) in
+                if snapshot.exists() {
+                    let id = snapshot.value as! String
+                    Database.database().reference().child("conversations").child(id).child("people").child(forUserID).observe(.value, with: { (snapshot) in
+                        if snapshot.exists() {
+                            if snapshot.value as! Bool == true {
+                                completion(true)
+                            } else {
+                                completion(false)
+                            }
+                        }
+                    })
+                }
+            })
+        }
+        
+    }
+    
     //MARK: Inits
     init(type: MessageType, content: Any, owner: MessageOwner, timestamp: Int, width: Int, height: Int, isRead: Bool) {
         self.type = type

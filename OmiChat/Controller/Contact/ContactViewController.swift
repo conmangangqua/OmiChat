@@ -22,12 +22,12 @@ class ContactViewController: UIViewController {
     func fetchUsers()  {
         if let id = currentUser?.uid {
             self.items.removeAll()
-            User.downloadAllUsers(exceptID: id, completion: {(user) in
+            User.downloadAllUsers(exceptID: id, completion: {[weak weakSelf = self] (user) in
+                weakSelf?.items.append(user)
+                weakSelf?.items.sort{ $0.name < $1.name }
+                weakSelf?.filteredItems = self.items
                 DispatchQueue.main.async {
-                    self.items.append(user)
-                    self.items.sort{ $0.name < $1.name }
-                    self.filteredItems = self.items
-                    self.collectionView.reloadData()
+                    weakSelf?.collectionView.reloadData()
                 }
             })
         }
@@ -35,13 +35,14 @@ class ContactViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        super.viewDidLoad()
+        self.fetchUsers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.fetchUsers()
+        
     }
     
 }
@@ -84,7 +85,7 @@ extension ContactViewController: UICollectionViewDelegate, UICollectionViewDataS
         if self.filteredItems.count > 0 {
             self.selectedUser = self.filteredItems[indexPath.row]
             if let currentUserID = currentUser?.uid {
-                Conversation.createConversations(forUserID: currentUserID, userEmail: (currentUser?.email)!, withUser: selectedUser!) {(success) in
+                Conversation.createConversations(forUserID: currentUserID, withUser: selectedUser!) {(success) in
                 }
             }
             

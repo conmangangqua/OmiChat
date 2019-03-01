@@ -15,20 +15,20 @@ class Conversation {
     var lastMessage: Message
     
     //MARK: Methods
-    class func createConversations(forUserID: String, userEmail: String, withUser: User, completion: @escaping(Bool) -> Swift.Void) {
+    class func createConversations(forUserID: String, withUser: User, completion: @escaping(Bool) -> Swift.Void) {
         Database.database().reference().child("users").child(forUserID).child("conversations").observe(.value, with: { snapshot in
             if snapshot.exists() {
                 let data = snapshot.value as! [String: String]
                 if data[withUser.id] == nil {
                     let ref = Database.database().reference().child("conversations").childByAutoId()
-                    ref.updateChildValues(["people": [forUserID: userEmail, withUser.id: withUser.email]])
+                    ref.updateChildValues(["people": [forUserID: false, withUser.id: false]])
                     Database.database().reference().child("users").child(forUserID).child("conversations").updateChildValues([withUser.id:ref.key!])
                     Database.database().reference().child("users").child(withUser.id).child("conversations").updateChildValues([forUserID:ref.key!])
                     completion(true)
                 }
             } else {
                 let ref = Database.database().reference().child("conversations").childByAutoId()
-                ref.updateChildValues(["people": [forUserID: userEmail, withUser.id: withUser.email]])
+                ref.updateChildValues(["people": [forUserID: false, withUser.id: false]])
                 Database.database().reference().child("users").child(forUserID).child("conversations").updateChildValues([withUser.id:ref.key!])
                 Database.database().reference().child("users").child(withUser.id).child("conversations").updateChildValues([forUserID:ref.key!])
                 completion(true)
@@ -50,6 +50,7 @@ class Conversation {
                             conversations.append(conversation)
                             completion(conversations)
                         })
+                        
                     })
                 }
             })

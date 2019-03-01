@@ -27,6 +27,19 @@ class ChatViewController: UIViewController, StickerViewDelegate {
     var currentUser: User?
     
    //MARK: Methods
+    func setTitle(){
+        User.info(forUserID: (currentUser?.id)!, completion: {(user) in
+            DispatchQueue.main.async {
+                self.titleLabel.text = self.currentUser?.name
+                if user.isOnline == true {
+                    self.onlineLbl.text = NSLocalizedString("Online", comment: "")
+                } else {
+                    self.onlineLbl.text = NSLocalizedString("Offline", comment: "")
+                }
+            }
+        })
+    }
+    
     func configTableView(){
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
@@ -171,16 +184,7 @@ class ChatViewController: UIViewController, StickerViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        User.info(forUserID: (currentUser?.id)!, completion: {(user) in
-            DispatchQueue.main.async {
-                self.titleLabel.text = self.currentUser?.name
-                if user.isOnline == true {
-                    self.onlineLbl.text = NSLocalizedString("Online", comment: "")
-                } else {
-                    self.onlineLbl.text = NSLocalizedString("Offline", comment: "")
-                }
-            }
-        })
+        self.setTitle()
     }
     
 }

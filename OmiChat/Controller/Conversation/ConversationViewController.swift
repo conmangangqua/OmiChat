@@ -19,6 +19,7 @@ class ConversationViewController: UIViewController {
     
     //MARK: Methods
     func fetchData() {
+        self.items.removeAll()
         Conversation.showConversations { (conversations) in
             self.items = conversations
             self.items.sort{ $0.lastMessage.timestamp > $1.lastMessage.timestamp }
